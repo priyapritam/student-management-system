@@ -6,12 +6,12 @@
     <meta charset="UTF-8">
     <title>ADD-Student Details</title>
     <style>
-        /* Your existing styles */
+    
         html, body {
             margin: 0;
             padding: 0;
-            height: 120vh; /* Increased height */
-            overflow: auto; /* Allows scrolling if needed */
+            height: 120vh;
+            overflow: auto;
         }
 
         body {
@@ -47,7 +47,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            height: auto; /* Let form expand as needed */
+            height: auto;
         }
 
         label {
@@ -90,7 +90,7 @@
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
         }
 
-        /* Styling for success/error messages */
+       
         .success-message {
             text-align: center;
             color: #00ff00;
@@ -135,7 +135,6 @@
     <h3>*Please Fill All The Details</h3>
 
     <div class="form-container">
-        <!-- Success or Error Message -->
         <%
             String successMessage = (String) request.getAttribute("successMessage");
             String errorMessage = (String) request.getAttribute("errorMessage");
@@ -176,7 +175,7 @@
         </form>
     </div>
 
-    <!-- Outside Buttons for Home & Display Students -->
+    
     <div class="outside-buttons">
         <button type="button" class="secondary-btn" onclick="window.location.href='index.jsp'">HOME</button>
         <button type="button" class="secondary-btn" onclick="window.location.href='display-all-students'">DISPLAY</button>

@@ -140,7 +140,7 @@
             font-weight: bold;
         }
 
-        /* Animations */
+        
         @keyframes fadeInBody {
             from {
                 opacity: 0;
@@ -224,16 +224,15 @@
         <% } %>
 
         <% if (student == null) { %>
-            <!-- Validation Form -->
+            
             <form action="validate-student" method="post">
                 <label for="studentId">Enter Student ID:</label>
                 <input type="number" id="studentId" name="studentId" placeholder="Enter Student ID" required>
                 <button type="submit" class="btn">Validate</button>
             </form>
         <% } else { %>
-            <!-- Two-column layout -->
+            
             <div class="row">
-                <!-- Fetched Details -->
                 <div class="column" style="animation: slideInRight 1s ease-out;">
                     <h3>Current Details</h3>
                     <p><strong>Student ID:</strong> <%= student.getStudentId() %></p>
@@ -243,7 +242,7 @@
                     <p><strong>Marks:</strong> <%= student.getStudentMarks() %></p>
                 </div>
 
-                <!-- Update Form -->
+                
                 <div class="column" style="animation: slideInLeft 1s ease-out;">
                     <h3>Update Details</h3>
                     <form action="update-student" method="post">
@@ -266,7 +265,6 @@
                 </div>
             </div>
 
-            <!-- Back to Display Page Button (only in update section) -->
             <form action="display-all-students" method="get">
                 <button type="submit" class="back-btn">Back to Display Page</button>
             </form>

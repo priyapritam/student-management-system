@@ -38,7 +38,7 @@
         animation: tableFadeIn 1.5s ease-in-out;
     }
 
-    /* Search Bar Styling */
+   
     .search-container {
         position: absolute;
         top: 20px;
@@ -94,7 +94,7 @@
         transform: scale(1.02);
     }
 
-    /* Buttons */
+    
     .btn {
         display: inline-block;
         margin: 0 10px;
@@ -126,7 +126,7 @@
         background: linear-gradient(135deg, #e53935, #f44336);
     }
 
-    /* Animations */
+    
     @keyframes fadeIn {
         from {
             opacity: 0;
@@ -193,7 +193,6 @@
                             <td><%= student.getStudentAge() %></td>
                             <td><%= student.getStudentMarks() %></td>
                         
-                        <!-- Update Button -->
                     <td style="text-align: center;">
                         <form action="validate-student" method="post">
                             <input type="hidden" name="studentId" value="<%= student.getStudentId() %>">
@@ -201,7 +200,7 @@
                         </form>
                     </td>
 
-                    <!-- Delete Button -->
+                    
                     <td style="text-align: center;">
                         <form action="validate-student-for-delete" method="post">
                             <input type="hidden" name="studentId" value="<%= student.getStudentId() %>">

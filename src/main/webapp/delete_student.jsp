@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <title>Delete Student</title>
     <style>
-        /* Zoom In Effect */
+        
         @keyframes zoomIn {
             0% {
                 transform: scale(0.5);
@@ -18,7 +18,7 @@
             }
         }
 
-        /* Evaporate Effect */
+        
         @keyframes evaporate {
             0% {
                 opacity: 1;
@@ -106,15 +106,15 @@
             color: #00ff0a;
         }
 
-        /* Evaporating effect on student data */
+        
         .evaporate {
-            animation: evaporate 1s forwards; /* Trigger evaporate animation */
+            animation: evaporate 1s forwards; 
         }
 
         .evaporate span {
             display: inline-block;
             animation: evaporate 1s forwards;
-            animation-delay: 0.1s; /* Delay to create a staggered effect */
+            animation-delay: 0.1s; 
         }
 
         .evaporate span:nth-child(2) {
@@ -149,14 +149,14 @@
         <% } %>
 
         <% if (student == null) { %>
-            <!-- Input Form -->
+            
             <form action="validate-student-for-delete" method="post">
                 <label class="id-validation" for="studentId" style="text-align: left;">Enter Student ID:</label>
                 <input type="number" id="studentId" name="studentId" required>
                 <button style="width: 104%" type="submit" class="btn">Validate</button>
             </form>
         <% } else { %>
-            <!-- Student Details -->
+            
             <form id="delete-form" style="text-align: center;" action="delete-student" method="post">
                 <input type="hidden" name="studentId" value="<%= student.getStudentId() %>">
 
@@ -170,7 +170,7 @@
                 <button type="submit" id="confirm-btn" class="btn">Confirm Deletion</button>
             </form>
 
-            <!-- New Buttons for Redirect -->
+            
             <form action="display-all-students" method="get">
                 <button type="submit" class="btn btn-secondary">Go to Display Page</button>
             </form>
@@ -182,24 +182,23 @@
     </div>
 
     <script>
-        // Add evaporate effect only when the Confirm Delete button is clicked
+        
         document.getElementById("confirm-btn").addEventListener("click", function(event) {
-            event.preventDefault(); // Prevent form submission temporarily
+            event.preventDefault(); 
 
-            // Get all the student data spans
             const studentData = document.querySelectorAll('.student-data span');
             
-            // Apply the evaporate effect to each student data element
+            
             studentData.forEach(function(element, index) {
                 setTimeout(function() {
                     element.classList.add('evaporate');
-                }, index * 100); // Stagger the animation for each data point
+                }, index * 100); 
             });
 
-            // Optionally, you can submit the form after the animation completes
+            
             setTimeout(function() {
-                document.getElementById("delete-form").submit(); // Submit the form after animation completes
-            }, 1000); // Wait for animation duration (1s)
+                document.getElementById("delete-form").submit(); 
+            }, 1000);
         });
     </script>
 </body>

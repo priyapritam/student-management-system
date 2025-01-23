@@ -22,14 +22,14 @@ public class StudentRepository {
         EntityTransaction et = em.getTransaction();
         
         try {
-            // Check if student with the given ID already exists
+           
             Student existingStudent = em.find(Student.class, student.getStudentId());
             if (existingStudent != null) {
                 return "ID already exists. Duplicate ID not accepted.";
             }
 
             et.begin();
-            em.persist(student); // Save new student
+            em.persist(student);
             et.commit();
             return "Student added successfully!";
         } catch (Exception e) {

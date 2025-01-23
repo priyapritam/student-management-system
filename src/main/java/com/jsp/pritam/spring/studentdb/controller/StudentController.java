@@ -24,7 +24,6 @@ public class StudentController {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("add_student.jsp");
 
-        // Check the resultMessage and pass it to the view
         if (resultMessage.equals("Student added successfully!")) {
             mav.addObject("successMessage", resultMessage);
         } else {
